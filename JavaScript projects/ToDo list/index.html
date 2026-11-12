@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO list</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="images/1560.png">
+</head>
+<body>
+    <header>
+        <h1>TODO list</h1>
+    </header>
+
+    <main>
+        <section class="tasksSection">
+            <ul id="tasks"></ul>
+            <h2 id="error"></h2>
+        </section>
+
+        <form>
+            <label for="taskInp"></label>
+            <input placeholder="Enter your task..." type="text" id="taskInp">
+            <button id="addTask">Add task</button>
+        </form>
+
+        <section class="statSection">
+            <h2>My tasks</h2>
+            <p id="total">Total tasks: 0</p>
+            <p>Completed: <span id="completed" class="completedCount">0</span></p>
+            <p id="remaining">Remaining: 0</p>
+        </section>
+    </main>
+
+    <script src="main.js" defer></script>
+</body>
+</html>

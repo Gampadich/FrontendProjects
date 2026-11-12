@@ -1,0 +1,115 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#error{
+    color: red;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+}
+
+.statSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+p{
+    font-size: 25px;
+}
+
+.completedCount{
+    color: green;
+}
+
+button {
+    width: 150px;
+    height: 30px;
+    border: none;
+    border-radius: 15px;
+    font-size: 15px;
+    font-weight: 550;
+    transition: 0.3s;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.edit:hover{
+    background-color: rgb(186, 186, 186);
+}
+
+#addTask:hover{
+    background-color: rgb(186, 186, 186);
+}
+
+button:disabled{
+    cursor: not-allowed;
+    background-color: rgb(155, 226, 155);
+    color: white;
+}
+
+input{
+    border: none;
+    height: 30px;
+    width: 20vw;
+    border-radius: 15px;
+    padding: 5px 5px;
+    font-size: 20px;
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+li{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+li div{
+    display: flex;
+    gap: 20px;
+}
+
+.tasksSection{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+section, form{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.completed{
+    text-decoration: line-through;
+}
+
+.deleteButton {
+    background-color: rgb(165, 0, 0);
+    color: white;
+}
+
+.deleteButton:hover{
+    background-color: rgb(90, 0, 0);
+}
+
+.doneButton {
+    background-color: rgb(0, 140, 0);
+    color: white;
+}
+
+.doneButton:hover{
+    background-color: rgb(0, 79, 0);
+}
