@@ -1,0 +1,135 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    text-align: center;
+}
+
+p{
+    font-size: 15px;
+    color: red;
+}
+
+.usersHeader {
+    display: grid;
+    grid-template-columns: .48fr .43fr .5fr 100px;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 20px;
+    border-bottom: 2px solid #ddd;
+}
+
+.usersHeader h2 {
+    font-size: 18px;
+}
+
+#users {
+    padding: 0;
+    margin: 0;
+}
+
+.textBox {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    flex: 1;
+    gap: 20px;
+    align-items: center;
+}
+
+.firstColumn{
+    max-width: 50%;
+}
+
+.buttonBox{
+    display: flex;
+    gap: 20px;
+}
+
+input{
+    font-size: 20px;
+}
+
+li {
+    margin: 0;
+    padding: 15px 20px;
+    font-size: 17px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+button {
+    color: white;
+    width: 85px;
+    height: 35px;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 15px;
+    text-shadow: none;
+    transition: .3s;
+}
+button:hover{
+    cursor: pointer;
+}
+
+.edit {
+    background-color: #e5e7eb;
+    color: #222;
+}
+
+.edit:hover {
+    background-color: #cbd5e1;
+}
+
+.addUser{
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    font-size: 50px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    transition: .3s;
+    color:#222;
+}
+
+.addUser:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+
+.delete{
+    background-color: rgb(207, 19, 19);
+}
+
+.delete:hover{
+    background-color: rgb(129, 12, 12);
+}
+
+.saveBtn{
+    background-color: rgb(22, 135, 22);
+}
+
+.saveBtn:hover{
+    background-color: rgb(7, 64, 7);
+}
+
+@media (max-width: 700px) {
+    li {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .textBox {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .buttonBox {
+        justify-content: flex-end;
+    }
+}
