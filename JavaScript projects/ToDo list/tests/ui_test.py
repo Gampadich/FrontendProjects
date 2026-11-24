@@ -288,23 +288,6 @@ def test_page_reload(page : Page, url):
         expect(task).to_be_visible(), 'Task not found'
 
 @allure.epic('Local storage tests')
-@allure.feature('Add new simple task and check it after page reload')
-@allure.story('Successfully appearing task after reload')
-def test_page_reload(page : Page, url):
-    page.goto(url)
-    with allure.step('Finding input and writing a task there'):
-        inputElem = page.query_selector('#taskInp')
-        inputElem.fill('New task')
-    with allure.step('Clicking add task button'):
-        addTaskButton = page.query_selector('#addTask')
-        addTaskButton.click()
-    with allure.step('Reloading page'):
-        page.reload()
-    with allure.step('Check the appearing task'):
-        task = page.locator('li')
-        expect(task).to_be_visible(), 'Task not found'
-
-@allure.epic('Local storage tests')
 @allure.feature('Add new simple task, click done button and check it after page reload')
 @allure.story('Successfully disabled edit and done after reload')
 def test_reload_page_with_done_task(page : Page, url):
@@ -328,7 +311,7 @@ def test_reload_page_with_done_task(page : Page, url):
 @allure.epic('Local storage tests')
 @allure.feature('Add new simple task, change title and check it after page reload')
 @allure.story('Successfully changing and saving task title after reloading')
-def test_changing_product_title(page : Page, url):
+def test_changing_product_title_and_reloading_page(page : Page, url):
     page.goto(url)
     with allure.step('Finding input and writing a task there'):
         inputElem = page.locator('#taskInp')
