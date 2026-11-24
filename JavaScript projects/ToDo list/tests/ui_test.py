@@ -4,6 +4,7 @@ from playwright.sync_api import Page, expect
 @allure.epic('Adding tasks test')
 @allure.feature('Add new simple task')
 @allure.story('Successfully adding new task')
+@allure.severity(allure.severity_level.CRITICAL)
 def test_add_task(page : Page, url):
     page.goto(url)
     with allure.step('Finding input and writing a task there'):
@@ -19,6 +20,7 @@ def test_add_task(page : Page, url):
 @allure.epic('Adding tasks test')
 @allure.feature('Add new task with space at the start and at the end')
 @allure.story('Successfully adding new task without spaces')
+@allure.severity(allure.severity_level.CRITICAL)
 def test_add_task_with_spaces(page : Page, url):
     page.goto(url)
     with allure.step('Finding input and writing a task there'):
@@ -34,6 +36,7 @@ def test_add_task_with_spaces(page : Page, url):
 @allure.epic('Adding tasks test')
 @allure.feature('Add new spaces task')
 @allure.story("Successfully didn't appeared task")
+@allure.severity(allure.severity_level.CRITICAL)
 def test_add_task_with_all_text_spaces(page : Page, url):
     page.goto(url)
     with allure.step('Finding input and writing a task there'):
@@ -49,6 +52,7 @@ def test_add_task_with_all_text_spaces(page : Page, url):
 @allure.epic('Adding tasks test')
 @allure.feature('Add new task without text')
 @allure.story('Successfully appearing error')
+@allure.severity(allure.severity_level.NORMAL)
 def test_error(page : Page, url):
     page.goto(url)
     with allure.step('Finding input and writing a task there'):
@@ -64,6 +68,7 @@ def test_error(page : Page, url):
 @allure.epic('Adding tasks test')
 @allure.feature('Add new simple task and check input field')
 @allure.story('Successfully clearing input field')
+@allure.severity(allure.severity_level.CRITICAL)
 def test_add_task_and_check_input(page : Page, url):
     page.goto(url)
     with allure.step('Finding input and writing a task there'):
@@ -78,6 +83,7 @@ def test_add_task_and_check_input(page : Page, url):
 @allure.epic('Done tasks')
 @allure.feature('Add new simple task and check edit and done button is disabled')
 @allure.story('Successfully disabled edit and done')
+@allure.severity(allure.severity_level.CRITICAL)
 def test_add_task_and_check_edit(page : Page, url):
     page.goto(url)
     with allure.step('Finding input and writing a task there'):
@@ -97,6 +103,7 @@ def test_add_task_and_check_edit(page : Page, url):
 @allure.epic('Done tasks')
 @allure.feature('Add new simple task and click done button')
 @allure.story('Successfully changing numbers at stats')
+@allure.severity(allure.severity_level.CRITICAL)
 def test_add_task_and_check_stats(page : Page, url):
     page.goto(url)
     with allure.step('Finding input and writing a task there'):
@@ -124,6 +131,7 @@ def test_add_task_and_check_stats(page : Page, url):
 @allure.epic('Editing task')
 @allure.feature('Look at the edit input')
 @allure.story('Successfully appearing edit input')
+@allure.severity(allure.severity_level.CRITICAL)
 def test_appearing_edit_input(page : Page, url):
     page.goto(url)
     with allure.step('Finding input and writing a task there'):
@@ -142,6 +150,7 @@ def test_appearing_edit_input(page : Page, url):
 @allure.epic('Editing task')
 @allure.feature('Change the task title')
 @allure.story('Successfully changing task title')
+@allure.severity(allure.severity_level.CRITICAL)
 def test_changing_product_title(page : Page, url):
     page.goto(url)
     with allure.step('Finding input and writing a task there'):
@@ -166,6 +175,7 @@ def test_changing_product_title(page : Page, url):
 @allure.epic('Editing task')
 @allure.feature('Do not change task title')
 @allure.story('Title must be like previous title')
+@allure.severity(allure.severity_level.CRITICAL)
 def test_changing_product_title_but_new_title_is_empty(page : Page, url):
     page.goto(url)
     with allure.step('Finding input and writing a task there'):
@@ -190,6 +200,7 @@ def test_changing_product_title_but_new_title_is_empty(page : Page, url):
 @allure.epic('Editing task')
 @allure.feature('Change task title with spaces at start and end')
 @allure.story('Title must be like previous title')
+@allure.severity(allure.severity_level.CRITICAL)
 def test_changing_product_title_but_new_title_is_with_spaces(page : Page, url):
     page.goto(url)
     with allure.step('Finding input and writing a task there'):
@@ -214,6 +225,7 @@ def test_changing_product_title_but_new_title_is_with_spaces(page : Page, url):
 @allure.epic('Delete task')
 @allure.feature('Delete task without clicking done button')
 @allure.story('Successfully deleting task')
+@allure.severity(allure.severity_level.CRITICAL)
 def test_delete_task_and_checking_stats(page : Page, url):
     page.goto(url)
     with allure.step('Finding input and writing a task there'):
@@ -241,6 +253,7 @@ def test_delete_task_and_checking_stats(page : Page, url):
 @allure.epic('Delete task')
 @allure.feature('Delete done task')
 @allure.story('Successfully deleting done task')
+@allure.severity(allure.severity_level.NORMAL)
 def test_delete_done_task_and_checking_stats(page : Page, url):
     page.goto(url)
     with allure.step('Finding input and writing a task there'):
@@ -273,6 +286,7 @@ def test_delete_done_task_and_checking_stats(page : Page, url):
 @allure.epic('Local storage tests')
 @allure.feature('Add new simple task and check it after page reload')
 @allure.story('Successfully appearing task after reload')
+@allure.severity(allure.severity_level.CRITICAL)
 def test_page_reload(page : Page, url):
     page.goto(url)
     with allure.step('Finding input and writing a task there'):
@@ -290,6 +304,7 @@ def test_page_reload(page : Page, url):
 @allure.epic('Local storage tests')
 @allure.feature('Add new simple task, click done button and check it after page reload')
 @allure.story('Successfully disabled edit and done after reload')
+@allure.severity(allure.severity_level.CRITICAL)
 def test_reload_page_with_done_task(page : Page, url):
     page.goto(url)
     with allure.step('Finding input and writing a task there'):
@@ -311,6 +326,7 @@ def test_reload_page_with_done_task(page : Page, url):
 @allure.epic('Local storage tests')
 @allure.feature('Add new simple task, change title and check it after page reload')
 @allure.story('Successfully changing and saving task title after reloading')
+@allure.severity(allure.severity_level.CRITICAL)
 def test_changing_product_title_and_reloading_page(page : Page, url):
     page.goto(url)
     with allure.step('Finding input and writing a task there'):
@@ -337,6 +353,7 @@ def test_changing_product_title_and_reloading_page(page : Page, url):
 @allure.epic('Local storage tests')
 @allure.feature('Delete task without clicking done button and reload page')
 @allure.story('Successfully deleting task after reloading page it must not be visible')
+@allure.severity(allure.severity_level.CRITICAL)
 def test_delete_task_and_check_it_after_reloading(page : Page, url):
     page.goto(url)
     with allure.step('Finding input and writing a task there'):
