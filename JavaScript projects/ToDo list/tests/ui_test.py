@@ -359,3 +359,5 @@ def test_delete_task_and_check_it_after_reloading(page : Page, url):
         remainingMatch = re.search(r'\d+', remainingTasks)
         totalTasksNum = int(totalMatch.group()) if totalMatch else None
         remainingTasksNum = int(remainingMatch.group()) if remainingMatch else None
+        assert totalTasksNum == 0, f'Total tasks num is {totalTasksNum} but must be 0'
+        assert remainingTasksNum == 0, f'Remaining tasks num is {remainingTasksNum} but must be 0'
