@@ -81,11 +81,11 @@ export function renderUsers(user){
                 }
             }
             patchUser(userObj)
-            userName.innerText = nameInp.value
+            userName.innerText = username
             nameInp.remove()
-            userEmail.innerText = emailInp.value
+            userEmail.innerText = email
             emailInp.remove()
-            userCity.innerText = cityInp.value
+            userCity.innerText = city
             cityInp.remove()
             editBtn.classList.remove('saveBtn')
             editBtn.classList.add('edit')
