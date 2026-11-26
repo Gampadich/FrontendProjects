@@ -39,6 +39,55 @@ Available operations:
 
 **Note:** JSONPlaceholder simulates write operations. POST, PATCH, and DELETE requests return simulated responses, but changes are not permanently stored on the server.
 
+## Automated Testing
+
+The project includes an automated test suite built with Python and Playwright.
+
+### Testing Stack
+
+- **Python** — test scripting language.
+- **Pytest** — test framework.
+- **Playwright** — browser automation and API request interception.
+- **Allure** — test reporting and visualization.
+
+### Test Coverage
+
+The test suite contains **24 automated tests**:
+
+| Test Type | Number of Tests | Description |
+|---|---:|---|
+| UI Tests | 18 | Verify user interactions, interface behavior, and input validation. |
+| API Tests | 4 | Verify API responses and HTTP operations independently of the UI. |
+| UI/API Integration Tests | 2 | Verify that UI actions trigger the correct API requests and send the expected data. |
+| **Total** | **24** | |
+
+### Running Tests
+
+Install the required dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run all tests:
+
+```bash
+pytest -v
+```
+
+Generate Allure test results:
+
+```bash
+pytest -v --alluredir=allure-results
+```
+
+Generate and open the Allure report:
+
+```bash
+allure generate allure-results -o allure-report --clean
+allure open allure-report
+```
+
 ## Project Structure
 
 ```text
@@ -47,18 +96,27 @@ User-Manager/
 │   ├── api.js
 │   ├── addUser.js
 │   └── renderUsers.js
+├── tests/
+│   ├── ui/
+│   │   └── test_ui.py
+│   ├── api/
+│   │   └── test_api.py
+│   └── integration/
+│       └── test_ui_api.py
 ├── index.html
 ├── style.css
-└── main.js
+├── main.js
+├── requirements.txt
+└── README.md
 ```
 
 ## Getting Started
 
 1. Clone the repository:
 
-   ```bash
-   git clone YOUR_REPOSITORY_URL
-   ```
+```bash
+git clone YOUR_REPOSITORY_URL
+```
 
 2. Open the project folder.
 
@@ -79,7 +137,8 @@ The application is organized into separate JavaScript modules:
 - Improve error handling and user feedback.
 - Add search and filtering functionality.
 - Improve accessibility and responsive design.
+- Expand automated test coverage.
 
 ## Author
 
-Created as a personal frontend development project to practice JavaScript modules, asynchronous programming, REST API integration, and DOM manipulation.
+Created as a personal frontend development project to practice JavaScript modules, asynchronous programming, REST API integration, DOM manipulation, and automated testing with Python and Playwright.
