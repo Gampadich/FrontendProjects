@@ -63,7 +63,7 @@ The test suite contains **24 automated tests**:
 
 ### Running Tests
 
-Install the required dependencies:
+Install the required Python dependencies:
 
 ```bash
 pip install -r requirements.txt
@@ -75,18 +75,52 @@ Run all tests:
 pytest -v
 ```
 
-Generate Allure test results:
+### Generating and Viewing Allure Reports
+
+Allure provides an interactive HTML report containing test results, execution statuses, error details, and other test information.
+
+**1. Run tests and collect Allure results:**
 
 ```bash
 pytest -v --alluredir=allure-results
 ```
 
-Generate and open the Allure report:
+This creates the `allure-results/` directory containing raw test execution data.
+
+**2. Generate the HTML report:**
 
 ```bash
 allure generate allure-results -o allure-report --clean
+```
+
+This generates the report inside the `allure-report/` directory.
+
+**3. Open the report in your browser:**
+
+```bash
 allure open allure-report
 ```
+
+Allure starts a local server and opens the generated report in your default browser.
+
+**Alternative — generate and open the report in one command:**
+
+```bash
+allure serve allure-results
+```
+
+This automatically generates a temporary report and opens it in the browser.
+
+**Note:** The Allure Python adapter is installed through `requirements.txt`, but the Allure Commandline tool must be installed separately. You also need to have the required Java runtime available for your Allure CLI version.
+
+### Important Directories
+
+| Directory | Purpose |
+|---|---|
+| `allure-results/` | Raw test execution results. |
+| `allure-report/` | Generated HTML report. |
+
+To generate an updated report, run the tests again and use the `allure generate` command with `--clean` to replace the previous report.
 
 ## Project Structure
 
@@ -138,6 +172,7 @@ The application is organized into separate JavaScript modules:
 - Add search and filtering functionality.
 - Improve accessibility and responsive design.
 - Expand automated test coverage.
+- Introduce CI/CD to automate test execution and report generation.
 
 ## Author
 
